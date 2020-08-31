@@ -1,0 +1,26 @@
+{
+  "name": "nyg/ali-mq",
+  "license": "MIT",
+  "description": "",
+  "authors": [
+    {
+      "name": "nyg",
+      "email": "nyg1991@aliyun.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.6",
+    "aliyunmq/mq-http-sdk": "^1.0",
+    "guzzlehttp/guzzle": "^6.0",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Nyg\\": "src/"
+    }
+  },
+  "require-dev": {
+    "phpunit/dbunit": "^2.0",
+    "phpunit/phpunit": "^5.7"
+  }
+}
