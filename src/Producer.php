@@ -2,6 +2,7 @@
 
 namespace Nyg;
 
+use Exception;
 use MQ\MQProducer;
 use MQ\Model\TopicMessage;
 use MQ\Traits\MessagePropertiesForPublish;
@@ -24,8 +25,8 @@ class Producer
      * @param array $data 推送数据，数组
      * @param string $tag 标签
      * @param string $key 键值
-     * @return void|MessagePropertiesForPublish
-     * @throws \Exception
+     * @return MessagePropertiesForPublish
+     * @throws Exception
      * @author 牛永光 nyg1991@aliyun.com
      * @date 2020/8/26 21:33
      */
@@ -40,7 +41,7 @@ class Producer
         }
         try {
             return $this->producer->publishMessage($message);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             throw new $e;
         }
     }

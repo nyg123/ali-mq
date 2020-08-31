@@ -25,7 +25,7 @@ class Test extends \PHPUnit\Framework\TestCase
 
         $data = ['a' => 1, 'b' => 2];
         try {
-           MQ::producer($this->config)->push($data, 'abc',time());
+           MQ::producer($this->config)->push($data, 'abc');
         } catch (Exception $e) {
             $this->assertTrue(false, $e->getMessage());
         }
