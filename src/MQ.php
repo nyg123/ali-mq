@@ -21,6 +21,10 @@ class MQ
      */
     private static $consumer_arr;
 
+    private function __construct()
+    {
+    }
+
     /**
      * 获取生产者
      * @param $config
@@ -75,5 +79,13 @@ class MQ
         $client = self::client($config['http_endpoint'], $config['access_key'], $config['secret_key']);
         self::$consumer_arr[$key] = $client->getConsumer($config['instance_id'], $config['topic'], $config['group_id'], $tag);
         return new Consumer(self::$consumer_arr[$key]);
+    }
+
+    private function __clone()
+    {
+    }
+
+    private function __wakeup()
+    {
     }
 }
