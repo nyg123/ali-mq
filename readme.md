@@ -16,7 +16,7 @@ $tag='abc'; //消息标签，二级消息类型，用来进一步区分某个 To
 try {
     MQ::producer($this->config)->push($data, 'abc'); //推送数据，成功返回MessagePropertiesForPublish类
 } catch (Exception $e) {
-    $this->assertTrue(false, $e->getMessage());
+    //发送失败
 }
 ```
 
