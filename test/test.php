@@ -8,12 +8,11 @@ include_once './src/MQ.php';
 class Test extends \PHPUnit\Framework\TestCase
 {
     public $config = [
-        'http_endpoint' => 'http://1644908467263130.mqrest.cn-qingdao.aliyuncs.com',
-        'access_key' => 'LTAI4GKeyTBc2iFRZsK9iDS5',
-        'secret_key' => 'SrQVBZQ2KwnL3FeZgMM7xdWuwXNMI9',
-        'topic' => 'test_wt',
-        'instance_id' => 'MQ_INST_1644908467263130_BXRlYHoj',
-        'group_id'=>'GID_queue_1'
+        'http_endpoint' => 'http://101840946123456.mqrest.cn-qingdao.aliyuncs.com',
+        'access_key' => 'LTAI4GG1oUUfffwettqmy2Z2',
+        'secret_key' => '6jYo9yuEtertertdfgre8rR432xCl3Vl',
+        'topic' => 'test_topic',
+        'instance_id' => 'MQ_INST_1018409462019097_BXReEF0c',
     ];
 
     /**
@@ -26,7 +25,7 @@ class Test extends \PHPUnit\Framework\TestCase
 
         $data = ['a' => 1, 'b' => 2];
         try {
-            MQ::producer($this->config)->push($data,'abc');
+           MQ::producer($this->config)->push($data, 'abc');
         } catch (Exception $e) {
             $this->assertTrue(false, $e->getMessage());
         }
